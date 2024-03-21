@@ -24,6 +24,11 @@ const RegisterPage = () => {
         return;
       }
     }
+    if (user.password !== user.passwordConfirm) {
+      alert("Passwords do not match");
+      return;
+    }
+
     console.log(user);
   }
 
@@ -43,14 +48,14 @@ const RegisterPage = () => {
             onChange={handleChange}
             name="password"
             value={user.password}
-            type="text"
+            type="password"
             placeholder="password"
           />
           <input
             onChange={handleChange}
             name="passwordConfirm"
             value={user.passwordConfirm}
-            type="text"
+            type="password"
             placeholder="password confirm"
           />
           <input
