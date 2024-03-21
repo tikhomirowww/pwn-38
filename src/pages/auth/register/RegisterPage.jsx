@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../auth.module.css";
 import AuthForm from "../../../features/auth/AuthForm";
+import Input from "../../../widgets/inputs/Input";
 
 const RegisterPage = () => {
   const [user, setUser] = useState({
@@ -32,40 +33,35 @@ const RegisterPage = () => {
       <AuthForm>
         <h2>Register form</h2>
         <form onSubmit={handleSubmit}>
-          <input
+          <Input
             onChange={handleChange}
             name="username"
             value={user.username}
             type="text"
-            placeholder="username"
           />
-          <input
+          <Input
             onChange={handleChange}
             name="password"
             value={user.password}
             type="text"
-            placeholder="password"
           />
-          <input
+          <Input
             onChange={handleChange}
             name="passwordConfirm"
             value={user.passwordConfirm}
             type="text"
-            placeholder="password confirm"
           />
-          <input
+          <Input
             onChange={handleChange}
             name="email"
             value={user.email}
             type="email"
-            placeholder="email"
           />
-          <input
+          <Input
             onChange={handleChange}
             name="profileImage"
             value={user.profileImage}
             type="url"
-            placeholder="Image url"
           />
           <button>Sign up</button>
         </form>
