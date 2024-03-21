@@ -3,7 +3,7 @@
     {
       "username": "Vasya",
       "password": "123456",
-      "profile_image": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800",
+      "profileImage": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800",
       "email": "superVasya@gmail.com",
       "id": 1
     }
