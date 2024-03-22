@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../auth.module.css";
 import AuthForm from "../../../features/auth/AuthForm";
 import Input from "../../../widgets/inputs/Input";
+import Button from "../../../widgets/buttons/Button";
 
 const RegisterPage = () => {
   const [user, setUser] = useState({
@@ -63,7 +64,7 @@ const RegisterPage = () => {
             value={user.profileImage}
             type="url"
           />
-          <button>Sign up</button>
+          <Button color="blue">Sign up</Button>
         </form>
       </AuthForm>
     </div>
