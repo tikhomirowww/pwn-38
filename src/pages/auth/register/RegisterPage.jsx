@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../auth.module.css";
 import AuthForm from "../../../features/auth/AuthForm";
 import Input from "../../../widgets/inputs/Input";
 import Button from "../../../widgets/buttons/Button";
-import { registerUser } from "../../../store/users/users.actions";
-import { useDispatch } from "react-redux";
+import { getUsers, registerUser } from "../../../store/users/users.actions";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
+  const [password, setPassword] = useState("");
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -24,7 +25,13 @@ const RegisterPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  const { users } = useSelector((state) => state.users);
+  console.log(users);
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
+
+  async function handleSubmit(e) {
     e.preventDefault();
     for (let key in user) {
       if (!user[key]) {
@@ -36,6 +43,22 @@ const RegisterPage = () => {
       alert("Passwords do not match");
       return;
     }
+
+    if (user.password.length < 6) {
+      alert("Password must be more than 6 symbol");
+      return;
+    }
+
+    const userObj = await users.find(
+      (item) =>
+        item.username.toLocaleLowerCase() === user.username.toLocaleLowerCase()
+    );
+    console.log(userObj);
+    if (userObj) {
+      alert("You have already registered");
+      return;
+    }
+
     dispatch(registerUser(user));
     setUser({
       username: "",
@@ -63,13 +86,13 @@ const RegisterPage = () => {
             onChange={handleChange}
             name="password"
             value={user.password}
-            type="text"
+            type="password"
           />
           <Input
             onChange={handleChange}
             name="passwordConfirm"
             value={user.passwordConfirm}
-            type="text"
+            type="password"
           />
           <Input
             onChange={handleChange}
@@ -83,7 +106,7 @@ const RegisterPage = () => {
             value={user.profileImage}
             type="url"
           />
-          <Button color="blue">Sign up</Button>
+          <Button>Sign up</Button>
         </form>
       </AuthForm>
     </div>
