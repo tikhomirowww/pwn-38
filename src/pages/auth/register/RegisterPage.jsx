@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "../auth.module.css";
 import AuthForm from "../../../features/auth/AuthForm";
-import Button from "../../../widgets/buttons/Button";
 
 const RegisterPage = () => {
   const [user, setUser] = useState({
@@ -68,7 +67,7 @@ const RegisterPage = () => {
             type="url"
             placeholder="Image url"
           />
-          <Button color="blue">Sign up</Button>
+          <button>Sign up</button>
         </form>
       </AuthForm>
     </div>
