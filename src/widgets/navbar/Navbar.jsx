@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./navbar.module.css";
 import { Link } from "react-router-dom";
 import image from "../../foto/image.png";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   useEffect(() => {
