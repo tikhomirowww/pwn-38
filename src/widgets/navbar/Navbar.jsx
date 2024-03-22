@@ -11,7 +11,7 @@ const Navbar = () => {
     };
     document.addEventListener("mousedown", handler);
   });
-  console.log(open);
+  //   console.log(open);
   return (
     <div className={styles.navbar}>
       <h2 className={styles.logo}>G-Evening</h2>

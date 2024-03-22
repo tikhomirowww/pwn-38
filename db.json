@@ -6,6 +6,14 @@
       "profileImage": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800",
       "email": "superVasya@gmail.com",
       "id": 1
+    },
+    {
+      "username": "admin@gmail.com",
+      "password": "12345678",
+      "passwordConfirm": "12345678",
+      "email": "tihomirovi92@gmail.com",
+      "profileImage": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800",
+      "id": 2
     }
   ]
 }

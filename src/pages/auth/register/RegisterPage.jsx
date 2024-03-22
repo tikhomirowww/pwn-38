@@ -3,6 +3,9 @@ import styles from "../auth.module.css";
 import AuthForm from "../../../features/auth/AuthForm";
 import Input from "../../../widgets/inputs/Input";
 import Button from "../../../widgets/buttons/Button";
+import { registerUser } from "../../../store/users/users.actions";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const [user, setUser] = useState({
@@ -18,6 +21,9 @@ const RegisterPage = () => {
     setUser({ ...user, [name]: value });
   }
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   function handleSubmit(e) {
     e.preventDefault();
     for (let key in user) {
@@ -30,7 +36,15 @@ const RegisterPage = () => {
       alert("Passwords do not match");
       return;
     }
-
+    dispatch(registerUser(user));
+    setUser({
+      username: "",
+      password: "",
+      passwordConfirm: "",
+      email: "",
+      profileImage: "",
+    });
+    navigate("/");
     console.log(user);
   }
 
@@ -49,14 +63,12 @@ const RegisterPage = () => {
             onChange={handleChange}
             name="password"
             value={user.password}
-
             type="text"
           />
           <Input
             onChange={handleChange}
             name="passwordConfirm"
             value={user.passwordConfirm}
-
             type="text"
           />
           <Input
