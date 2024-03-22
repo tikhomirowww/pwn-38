@@ -1,18 +1,13 @@
-import React from 'react'
-import styles from "./input.module.css"
+import React from "react";
+import styles from "./input.module.css";
 
-const Input = ({value, onChange, type, name }) => {
+const Input = ({ value, onChange, type, name }) => {
   return (
     <div className={styles.inputGroup}>
-        <input
-            onChange={onChange}
-            name={name}
-            value={value}
-            type={type}
-          />
-        <label for="name">{name}</label>
+      <input onChange={onChange} name={name} value={value} type={type} />
+      <label htmlFor="name">{name}</label>
     </div>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;
