@@ -3,3 +3,38 @@
   padding: 0;
   box-sizing: border-box;
 }
+.navbar {
+  background-color: rgb(77, 73, 73);
+}
+.navImage img {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 70px;
+}
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: 0.5s;
+  border: 1px solid gray;
+  padding: 20px;
+  border-radius: 10px;
+}
+.navMenu.active {
+  display: flex;
+  transform: translate(0);
+  opacity: 1;
+  visibility: visible;
+}

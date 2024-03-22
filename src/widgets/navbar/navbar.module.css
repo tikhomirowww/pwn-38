@@ -1,0 +1,17 @@
+.navbar {
+  background-color: rgb(102, 97, 97);
+  width: 100%;
+  height: 90px;
+}
+.navbar a {
+  color: rgb(108, 115, 115);
+  text-decoration: none;
+  font-size: 20px;
+}
+.navbar a:hover {
+  color: aqua;
+}
+.logo {
+  padding-left: 20px;
+  padding-top: 20px;
+}
