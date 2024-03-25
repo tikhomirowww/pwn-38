@@ -26,7 +26,7 @@
   color: rgb(100, 100, 100);
 }
 
-.inputGroup :hover ~ label {
+.inputGroup  label {
   transform: translateY(-50%) scale(0.9);
   margin: 0em;
   margin-left: 1.3em;
