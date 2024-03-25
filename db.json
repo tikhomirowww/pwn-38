@@ -5,23 +5,25 @@
       "password": "123456",
       "profileImage": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800",
       "email": "superVasya@gmail.com",
+      "backgroundImage": "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg",
+      "description": "hello hello hello ",
+      "posts": [
+        {
+          "title": "hello world",
+          "image": "https://cdn.pixabay.com/photo/2018/08/31/18/21/fantasy-3645269_640.jpg",
+          "description": "hello hello hello ",
+          "author": "Vasya",
+          "id": 1
+        },
+        {
+          "title": "hello world",
+          "image": "https://cdn.pixabay.com/photo/2018/08/31/18/21/fantasy-3645269_640.jpg",
+          "description": "hello hello hello ",
+          "author": "Vasya",
+          "id": 2
+        }
+      ],
       "id": 1
-    },
-    {
-      "username": "admin@gmail.com",
-      "password": "12345678",
-      "passwordConfirm": "12345678",
-      "email": "tihomirovi92@gmail.com",
-      "profileImage": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800",
-      "id": 2
-    },
-    {
-      "username": "admin",
-      "password": "123456",
-      "passwordConfirm": "123456",
-      "email": "admin@mail.com",
-      "profileImage": "https://www.shutterstock.com/image-vector/user-icon-vector-600nw-393536320.jpg",
-      "id": 3
     }
   ]
 }

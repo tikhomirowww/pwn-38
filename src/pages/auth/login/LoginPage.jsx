@@ -16,7 +16,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const { users } = useSelector((state) => state.users);
-  console.log(users);
+  //   console.log(users);
   useEffect(() => {
     dispatch(getUsers());
   }, [dispatch]);
@@ -36,7 +36,7 @@ const LoginPage = () => {
     }
 
     const userObj = await users.find((item) => item.username === user.username);
-    console.log(userObj);
+    // console.log(userObj);
     if (!userObj) {
       alert("User not found!");
       return;
@@ -51,8 +51,9 @@ const LoginPage = () => {
       username: "",
       password: "",
     });
+    localStorage.setItem("currentUser", userObj.id);
     navigate("/");
-    console.log(user);
+    // console.log(user);
   }
   return (
     <div>
