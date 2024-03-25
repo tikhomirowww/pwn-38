@@ -69,9 +69,9 @@ const LoginPage = () => {
             onChange={handleChange}
             name="password"
             value={user.password}
-            type="text"
+            type="password"
           />
-          <Button color="blue">Sign ip</Button>
+          <Button>Sign ip</Button>
         </form>
       </AuthForm>
     </div>
