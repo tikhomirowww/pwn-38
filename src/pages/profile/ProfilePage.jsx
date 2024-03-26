@@ -33,7 +33,6 @@ const ProfilePage = () => {
                     <img className="post-image" src={item.image} alt="" />
                     <div className="post-details">
                       <h3 className="post-title">{item.title}</h3>
-
                       <p className="post-description">{item.description}</p>
                     </div>
                   </div>

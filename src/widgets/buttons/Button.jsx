@@ -1,14 +1,18 @@
 import React from "react";
 import styles from "./button.module.css";
 
-const Button = ({ children, onClick, className, color }) => {
+const Button = ({ children, onClick, className, color, style }) => {
   const colorClass = [
     color === "red" ? styles.red : "",
     color === "green" ? styles.green : "",
     color === "blue" ? styles.blue : "",
   ].join(" ");
   return (
-    <button className={`${colorClass}  ${className}`} onClick={onClick}>
+    <button
+      style={style}
+      className={`${colorClass}  ${className}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

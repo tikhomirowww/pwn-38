@@ -40,10 +40,18 @@ const Navbar = () => {
   }, [currentUser]);
   return (
     <div className={styles.navbar}>
-      <h2 className={styles.logo}>G-Evening</h2>
+      <Link className={styles.logo} to="/">
+        <h2>G-Evening</h2>
+      </Link>
       <div className={styles.navbarUser}>
-        <Button />
-        <Button />
+        {currentUser && (
+          <Link to="/create-post">
+            <Button style={{ color: "white" }} color="green">
+              Create post
+            </Button>
+          </Link>
+        )}
+        {/* <Button /> */}
         <Link to="/profile">{user.username}</Link>
       </div>
       <div className="navImage">

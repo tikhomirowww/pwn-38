@@ -32,7 +32,16 @@
       "email": "tihomirovi92@gmail.com",
       "profileImage": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
       "backgroundImage": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-      "posts": [],
+      "posts": [
+        {
+          "title": "test title",
+          "image": "https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk=",
+          "description": "super desc",
+          "id": "",
+          "likes": 0,
+          "comments": []
+        }
+      ],
       "id": 2
     }
   ]

@@ -73,7 +73,7 @@ const LoginPage = () => {
             value={user.password}
             type="password"
           />
-          <Button>Sign ip</Button>
+          <Button>Sign in</Button>
         </form>
       </AuthForm>
     </div>

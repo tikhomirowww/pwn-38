@@ -22,3 +22,12 @@ export const getCurrentUser = createAsyncThunk(
     return data;
   }
 );
+
+export const createPost = createAsyncThunk(
+  "users/createPost",
+  async ({ user, post }, { dispatch }) => {
+    const updatedPosts = [...user.posts, post];
+    await axios.patch(`${USERS_API}/${user.id}`, { posts: updatedPosts });
+    dispatch(getCurrentUser(user.id));
+  }
+);

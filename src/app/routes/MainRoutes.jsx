@@ -5,6 +5,7 @@ import RegisterPage from "../../pages/auth/register/RegisterPage";
 import LoginPage from "../../pages/auth/login/LoginPage";
 import ProfilePage from "../../pages/profile/ProfilePage";
 import AuthProvider from "./AuthProvider";
+import CreatePost from "../../features/post/CreatePost";
 
 const MainRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const MainRoutes = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route element={<AuthProvider />}>
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/create-post" element={<CreatePost />} />
       </Route>
     </Routes>
   );
