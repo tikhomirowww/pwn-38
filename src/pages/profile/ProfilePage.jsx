@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "./profile.css";
 
-
 const ProfilePage = () => {
   const { currentUser } = useSelector((state) => state.users);
 
@@ -27,19 +26,19 @@ const ProfilePage = () => {
           <div className="profile-posts">
             <h2 className="posts-title">My posts:</h2>
             <div className="posts-list">
-              {currentUser.posts.map((item) => (
-                <div className="post" key={item.id}>
-                  <p className="post-author">Author: {item.author}</p>
-                  <img className="post-image" src={item.image} alt="" />
-                  <div className="post-details">
-                    <h3 className="post-title">{item.title}</h3>
+              {currentUser.posts &&
+                currentUser.posts.map((item) => (
+                  <div className="post" key={item.id}>
+                    <p className="post-author">Author: {item.author}</p>
+                    <img className="post-image" src={item.image} alt="" />
+                    <div className="post-details">
+                      <h3 className="post-title">{item.title}</h3>
 
-                    <p className="post-description">{item.description}</p>
+                      <p className="post-description">{item.description}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
-
           </div>
         </div>
       )}

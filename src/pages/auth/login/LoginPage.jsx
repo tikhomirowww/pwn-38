@@ -3,7 +3,7 @@ import styles from "../auth.module.css";
 import AuthForm from "../../../features/auth/AuthForm";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsers } from "../../../store/users/users.actions";
+import { getCurrentUser, getUsers } from "../../../store/users/users.actions";
 import Input from "../../../widgets/inputs/Input";
 import Button from "../../../widgets/buttons/Button";
 
@@ -53,6 +53,7 @@ const LoginPage = () => {
     });
     localStorage.setItem("currentUser", userObj.id);
     navigate("/");
+    dispatch(getCurrentUser(userObj.id));
     // console.log(user);
   }
   return (
