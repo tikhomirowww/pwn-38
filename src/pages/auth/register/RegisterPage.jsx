@@ -15,6 +15,9 @@ const RegisterPage = () => {
     passwordConfirm: "",
     email: "",
     profileImage: "",
+    backgroundImage:
+      "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+    posts: [],
   });
 
   function handleChange(e) {
@@ -66,6 +69,9 @@ const RegisterPage = () => {
       passwordConfirm: "",
       email: "",
       profileImage: "",
+      backgroundImage:
+        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+      posts: [],
     });
     navigate("/");
     console.log(user);

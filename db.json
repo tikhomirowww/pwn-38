@@ -24,6 +24,16 @@
         }
       ],
       "id": 1
+    },
+    {
+      "username": "admin@gmail.com",
+      "password": "123456",
+      "passwordConfirm": "123456",
+      "email": "tihomirovi92@gmail.com",
+      "profileImage": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
+      "backgroundImage": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+      "posts": [],
+      "id": 2
     }
   ]
 }
