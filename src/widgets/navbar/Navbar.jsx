@@ -5,6 +5,7 @@ import image from "../../foto/image.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../store/users/users.actions";
 import { logout } from "../../store/users/users.slice";
+import Button from "../buttons/Button";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -40,9 +41,14 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <h2 className={styles.logo}>G-Evening</h2>
-      <p>{user.username}</p>
+      <div className={styles.navbarUser}>
+        <Button />
+        <Button />
+        <Link to="/profile">{user.username}</Link>
+      </div>
       <div className="navImage">
         <img
+          alt=""
           onClick={() => setOpen(!open)}
           src={
             currentUser && currentUser.profileImage
@@ -51,11 +57,14 @@ const Navbar = () => {
           }
         />
       </div>
+
       <div className={`navMenu ${open ? "active" : ""}`}>
         <Link to="/profile">My profile</Link>
         <Link to="/register">Sign up</Link>
         <Link to="/login">Sign in</Link>
-        <p onClick={() => dispatch(logout())}>Logout</p>
+        <p className={styles.user} onClick={() => dispatch(logout())}>
+          Logout
+        </p>
       </div>
     </div>
   );
