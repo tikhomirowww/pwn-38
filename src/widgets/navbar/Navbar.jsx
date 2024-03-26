@@ -62,9 +62,7 @@ const Navbar = () => {
         <Link to="/profile">My profile</Link>
         <Link to="/register">Sign up</Link>
         <Link to="/login">Sign in</Link>
-        <p className={styles.user} onClick={() => dispatch(logout())}>
-          Logout
-        </p>
+        <p onClick={() => dispatch(logout())}>Logout</p>
       </div>
     </div>
   );

@@ -1,32 +1,37 @@
 .user {
   font-size: 20px;
   cursor: pointer;
-  color: rgb(108, 115, 115);
+  color: white;
 }
 .navbar {
-  background-color: rgb(97, 94, 94);
+  background-color: black;
   width: 100%;
   height: 90px;
   display: flex;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
 .navbar a {
-  color: rgb(108, 115, 115);
+  color: white;
   text-decoration: none;
   font-size: 20px;
 }
+
 .navbar a:hover,
 .user:hover {
-  color: aqua;
+  color: aqua !important;
 }
-\ .logo {
+.logo {
   padding-left: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 .navbarUser {
-  margin-left: 60%;
+  width: 60%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
