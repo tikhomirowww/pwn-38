@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "./profile.css";
 
+
 const ProfilePage = () => {
   const { currentUser } = useSelector((state) => state.users);
 
@@ -38,6 +39,7 @@ const ProfilePage = () => {
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       )}
