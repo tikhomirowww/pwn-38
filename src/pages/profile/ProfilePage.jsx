@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import styles from "./profilePage.module.css";
 
 const ProfilePage = () => {
   const { currentUser } = useSelector((state) => state.users);
@@ -8,11 +9,21 @@ const ProfilePage = () => {
     <div>
       {currentUser && (
         <div>
-          <img src={currentUser.backgroundImage} alt="" />
-          <img src={currentUser.profileImage} alt="" />
-          <h2>{currentUser.username}</h2>
-          <p>My BIO: {currentUser.description}</p>
-          <h2>My posts:</h2>
+          <div className={styles.wrapperProfileHeader}>
+            <div className={styles.bgImage}>
+              <img src={currentUser.backgroundImage} alt="" />
+            </div>
+            <div className={styles.bg}>
+              <div className={styles.profileImage}>
+                <img src={currentUser.profileImage} alt="" />
+              </div>
+              <div className={styles.userInfo}>
+                <h1>{currentUser.username}</h1>
+                <h2>My status: {currentUser.description}</h2>
+                <p>My posts:</p>
+              </div>
+            </div>
+          </div>
           <div>
             {currentUser.posts.map((item) => (
               <div key={item.id}>
