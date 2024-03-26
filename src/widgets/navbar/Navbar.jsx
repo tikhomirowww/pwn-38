@@ -65,7 +65,9 @@ const Navbar = () => {
             <p onClick={() => dispatch(logout())}>Logout</p>
           </div>
         ) : (
-          <div>
+          <div
+            style={{ display: "flex", flexDirection: "column", rowGap: "10px" }}
+          >
             <Link to="/register">Sign up</Link>
             <Link to="/login">Sign in</Link>
           </div>
