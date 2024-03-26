@@ -59,12 +59,17 @@ const Navbar = () => {
       </div>
 
       <div className={`navMenu ${open ? "active" : ""}`}>
-        <Link to="/profile">My profile</Link>
-        <Link to="/register">Sign up</Link>
-        <Link to="/login">Sign in</Link>
-        <p className={styles.user} onClick={() => dispatch(logout())}>
-          Logout
-        </p>
+        {currentUser ? (
+          <div>
+            <Link to="/profile">My profile</Link>
+            <p onClick={() => dispatch(logout())}>Logout</p>
+          </div>
+        ) : (
+          <div>
+            <Link to="/register">Sign up</Link>
+            <Link to="/login">Sign in</Link>
+          </div>
+        )}
       </div>
     </div>
   );
