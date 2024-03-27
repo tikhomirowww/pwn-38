@@ -44,6 +44,11 @@ const Navbar = () => {
         <h2>G-Evening</h2>
       </Link>
       <div className={styles.navbarUser}>
+        <Link to="/users">
+          <Button style={{ color: "white" }} color="blue">
+            Users
+          </Button>
+        </Link>
         {currentUser && (
           <Link to="/create-post">
             <Button style={{ color: "white" }} color="green">

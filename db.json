@@ -13,6 +13,7 @@
           "image": "https://cdn.pixabay.com/photo/2018/08/31/18/21/fantasy-3645269_640.jpg",
           "description": "hello hello hello ",
           "author": "Vasya",
+          "likes": 3,
           "id": 1
         },
         {
@@ -20,6 +21,7 @@
           "image": "https://cdn.pixabay.com/photo/2018/08/31/18/21/fantasy-3645269_640.jpg",
           "description": "hello hello hello ",
           "author": "Vasya",
+          "likes": 4,
           "id": 2
         }
       ],
@@ -40,9 +42,35 @@
           "id": "",
           "likes": 0,
           "comments": []
+        },
+        {
+          "title": "cat",
+          "image": "https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg",
+          "description": "say hello",
+          "id": 1711524145043,
+          "likes": 0,
+          "comments": []
         }
       ],
       "id": 2
+    },
+    {
+      "username": "Petya",
+      "password": "123456",
+      "profileImage": "https://i.pinimg.com/736x/0b/a4/84/0ba484a147b025c990cf7cfdc8d12887.jpg",
+      "email": "superVasya@gmail.com",
+      "backgroundImage": "https://img.freepik.com/premium-photo/funny-monster-abstract-3d-rendered-background-3d-illustration_743855-1732.jpg?size=626&ext=jpg&ga=GA1.1.735520172.1711411200&semt=ais",
+      "description": "hello hello hello ",
+      "posts": [
+        {
+          "title": "hello from London",
+          "image": "https://t4.ftcdn.net/jpg/02/57/75/51/360_F_257755130_JgTlcqTFxabsIKgIYLAhOFEFYmNgwyJ6.jpg",
+          "description": "hello hello hello ",
+          "author": "Vasya",
+          "id": 1
+        }
+      ],
+      "id": 3
     }
   ]
 }

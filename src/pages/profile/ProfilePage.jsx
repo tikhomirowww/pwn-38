@@ -1,9 +1,29 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 import "./profile.css";
+import Card from "../../widgets/card/Card";
+import { useDispatch } from "react-redux";
+import { getOneUser, handleLike } from "../../store/users/users.actions";
+import { useParams } from "react-router-dom";
 
-const ProfilePage = () => {
-  const { currentUser } = useSelector((state) => state.users);
+const ProfilePage = ({ currentUser }) => {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  useEffect(() => {
+    id && dispatch(getOneUser(id));
+  }, []);
+
+  const [likedPosts, setLikesPosts] = useState(new Set());
+  function toggleLike(postId) {
+    const newLikedPosts = new Set(likedPosts);
+    if (newLikedPosts.has(postId)) {
+      newLikedPosts.delete(postId);
+      dispatch(handleLike({ user: currentUser, postId, operation: "minus" }));
+    } else {
+      newLikedPosts.add(postId);
+      dispatch(handleLike({ user: currentUser, postId, operation: "plus" }));
+    }
+    setLikesPosts(newLikedPosts);
+  }
 
   return (
     <div className="profile-container">
@@ -28,14 +48,12 @@ const ProfilePage = () => {
             <div className="posts-list">
               {currentUser.posts &&
                 currentUser.posts.map((item) => (
-                  <div className="post" key={item.id}>
-                    <p className="post-author">Author: {item.author}</p>
-                    <img className="post-image" src={item.image} alt="" />
-                    <div className="post-details">
-                      <h3 className="post-title">{item.title}</h3>
-                      <p className="post-description">{item.description}</p>
-                    </div>
-                  </div>
+                  <Card
+                    toggleLike={toggleLike}
+                    likedPosts={likedPosts}
+                    item={item}
+                    key={item.id}
+                  />
                 ))}
             </div>
           </div>

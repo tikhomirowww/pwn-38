@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCurrentUser, getUsers } from "./users.actions";
+import { getCurrentUser, getOneUser, getUsers } from "./users.actions";
 
 const usersSlice = createSlice({
   name: "users",
@@ -8,6 +8,7 @@ const usersSlice = createSlice({
     loading: false,
     users: [],
     currentUser: null,
+    oneUser: null,
   },
   reducers: {
     logout: (state) => {
@@ -38,6 +39,17 @@ const usersSlice = createSlice({
       .addCase(getCurrentUser.fulfilled, (state, action) => {
         state.loading = false;
         state.currentUser = action.payload;
+      })
+      .addCase(getOneUser.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getOneUser.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
+      })
+      .addCase(getOneUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.oneUser = action.payload;
       });
   },
 });

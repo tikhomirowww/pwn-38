@@ -23,11 +23,42 @@ export const getCurrentUser = createAsyncThunk(
   }
 );
 
+export const getOneUser = createAsyncThunk("users/getOneUser", async (id) => {
+  const { data } = await axios.get(`${USERS_API}/${id}`);
+  return data;
+});
+
 export const createPost = createAsyncThunk(
   "users/createPost",
   async ({ user, post }, { dispatch }) => {
     const updatedPosts = [...user.posts, post];
     await axios.patch(`${USERS_API}/${user.id}`, { posts: updatedPosts });
     dispatch(getCurrentUser(user.id));
+  }
+);
+
+export const handleLike = createAsyncThunk(
+  "users/handleLike",
+  async ({ user, postId, operation }, { dispatch }) => {
+    const updatedPosts = {
+      ...user,
+      posts: user.posts.map((item) => {
+        if (operation === "minus") {
+          if (postId === item.id) {
+            return { ...item, likes: item.likes - 1 };
+          } else {
+            return item;
+          }
+        } else {
+          if (postId === item.id) {
+            return { ...item, likes: item.likes + 1 };
+          } else {
+            return item;
+          }
+        }
+      }),
+    };
+    await axios.patch(`${USERS_API}/${user.id}`, updatedPosts);
+    dispatch(getOneUser(user.id));
   }
 );
