@@ -21,7 +21,7 @@
           "image": "https://cdn.pixabay.com/photo/2018/08/31/18/21/fantasy-3645269_640.jpg",
           "description": "hello hello hello ",
           "author": "Vasya",
-          "likes": 4,
+          "likes": 5,
           "id": 2
         }
       ],
@@ -48,7 +48,7 @@
           "image": "https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg",
           "description": "say hello",
           "id": 1711524145043,
-          "likes": 0,
+          "likes": -1,
           "comments": []
         }
       ],
@@ -67,6 +67,7 @@
           "image": "https://t4.ftcdn.net/jpg/02/57/75/51/360_F_257755130_JgTlcqTFxabsIKgIYLAhOFEFYmNgwyJ6.jpg",
           "description": "hello hello hello ",
           "author": "Vasya",
+          "likes": 0,
           "id": 1
         }
       ],

@@ -44,17 +44,9 @@ export const handleLike = createAsyncThunk(
       ...user,
       posts: user.posts.map((item) => {
         if (operation === "minus") {
-          if (postId === item.id) {
-            return { ...item, likes: item.likes - 1 };
-          } else {
-            return item;
-          }
+          return postId === item.id ? { ...item, likes: item.likes - 1 } : item;
         } else {
-          if (postId === item.id) {
-            return { ...item, likes: item.likes + 1 };
-          } else {
-            return item;
-          }
+          return postId === item.id ? { ...item, likes: item.likes + 1 } : item;
         }
       }),
     };

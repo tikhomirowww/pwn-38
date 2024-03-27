@@ -12,40 +12,45 @@ const UsersPage = () => {
   }, []);
   return (
     <div>
-      {currentUser &&
-        users
-          .filter((user) => user.id !== currentUser.id)
-          .map((item) => (
-            <Link
+      {users
+        .filter((user) => {
+          if (currentUser) {
+            return user.id !== currentUser.id;
+          } else {
+            return user;
+          }
+        })
+        .map((item) => (
+          <Link
+            style={{
+              width: "400px",
+              display: "block",
+              all: "unset",
+              cursor: "pointer",
+            }}
+            key={item.id}
+            to={`/user/${item.id}`}
+          >
+            <div
               style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                border: "1px solid black",
                 width: "400px",
-                display: "block",
-                all: "unset",
-                cursor: "pointer",
               }}
-              key={item.id}
-              to={`/user/${item.id}`}
             >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  border: "1px solid black",
-                  width: "400px",
-                }}
-              >
-                <img
-                  style={{ borderRadius: "50%", objectFit: "cover" }}
-                  width={150}
-                  height={150}
-                  src={item.profileImage}
-                  alt=""
-                />
-                <h3>{item.username}</h3>
-              </div>
-            </Link>
-          ))}
+              <img
+                style={{ borderRadius: "50%", objectFit: "cover" }}
+                width={150}
+                height={150}
+                src={item.profileImage}
+                alt=""
+              />
+              <h3>{item.username}</h3>
+            </div>
+          </Link>
+        ))}
     </div>
   );
 };
