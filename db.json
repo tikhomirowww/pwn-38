@@ -13,7 +13,7 @@
           "image": "https://cdn.pixabay.com/photo/2018/08/31/18/21/fantasy-3645269_640.jpg",
           "description": "hello hello hello ",
           "author": "Vasya",
-          "likes": 3,
+          "likes": 4,
           "id": 1
         },
         {
@@ -21,7 +21,7 @@
           "image": "https://cdn.pixabay.com/photo/2018/08/31/18/21/fantasy-3645269_640.jpg",
           "description": "hello hello hello ",
           "author": "Vasya",
-          "likes": 5,
+          "likes": 6,
           "id": 2
         },
         {
@@ -48,7 +48,7 @@
           "image": "https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk=",
           "description": "super desc",
           "id": "",
-          "likes": 1,
+          "likes": 2,
           "comments": []
         },
         {
@@ -56,7 +56,7 @@
           "image": "https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg",
           "description": "say hello",
           "id": 1711524145043,
-          "likes": 0,
+          "likes": 1,
           "comments": []
         }
       ],
@@ -80,6 +80,25 @@
         }
       ],
       "id": 3
+    },
+    {
+      "username": "Aiperi",
+      "password": "123456",
+      "passwordConfirm": "123456",
+      "email": "aiperi@mail.ru",
+      "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYvep33Bmi8gqhovRmx47bXDaMQsA_6q1dnx264Evy5w&s",
+      "backgroundImage": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+      "posts": [
+        {
+          "title": "car",
+          "image": "https://cdn.motor1.com/images/mgl/NGOMej/s1/bmw-i5-edrive40-2023.webp",
+          "description": "car",
+          "id": 1711619886201,
+          "likes": 0,
+          "comments": []
+        }
+      ],
+      "id": 4
     }
   ]
 }
