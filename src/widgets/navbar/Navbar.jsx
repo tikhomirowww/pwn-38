@@ -38,12 +38,20 @@ const Navbar = () => {
       });
     }
   }, [currentUser]);
+  console.log(currentUser);
   return (
     <div className={styles.navbar}>
       <Link className={styles.logo} to="/">
         <h2>G-Evening</h2>
       </Link>
       <div className={styles.navbarUser}>
+        {currentUser && currentUser.email === "admin@gmail.com" && (
+          <Link to="/create-product">
+            <Button style={{ color: "white" }} color="green">
+              Create product
+            </Button>
+          </Link>
+        )}
         <Link to="/users">
           <Button style={{ color: "white" }} color="blue">
             Users

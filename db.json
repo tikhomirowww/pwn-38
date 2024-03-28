@@ -4,7 +4,7 @@
       "username": "Vasya",
       "password": "123456",
       "profileImage": "https://t3.ftcdn.net/jpg/05/62/99/30/360_F_562993013_RgG3bgUvdy08FVIgUxMIdmc6Z5QHwUQh.jpg",
-      "email": "admin@mail.com",
+      "email": "admin@gmail.com",
       "backgroundImage": "https://t4.ftcdn.net/jpg/04/61/47/03/360_F_461470323_6TMQSkCCs9XQoTtyer8VCsFypxwRiDGU.jpg",
       "description": "my desc",
       "posts": [
@@ -38,10 +38,10 @@
       "id": 1
     },
     {
-      "username": "admin@gmail.com",
+      "username": "Admin",
       "password": "123456",
       "passwordConfirm": "123456",
-      "email": "tihomirovi92@gmail.com",
+      "email": "admin@gmail.com",
       "profileImage": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
       "backgroundImage": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
       "posts": [
@@ -122,6 +122,15 @@
         }
       ],
       "id": 4
+    }
+  ],
+  "products": [
+    {
+      "title": "kepka",
+      "description": "krutaya kepka",
+      "price": "2000",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHhliZuvimZQ8OiAC5SF6Il_oBsBPnttEvPCAQ91bDhA&s",
+      "id": 1
     }
   ]
 }

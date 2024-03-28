@@ -9,6 +9,7 @@ import CreatePost from "../../features/post/CreatePost";
 import UsersPage from "../../pages/users/UsersPage";
 import { useSelector } from "react-redux";
 import EditProfile from "../../pages/auth/editProfile/EditProfile";
+import AddProduct from "../../pages/products/add/AddProduct";
 
 const MainRoutes = () => {
   const { currentUser, oneUser } = useSelector((state) => state.users);
@@ -25,6 +26,7 @@ const MainRoutes = () => {
           element={<ProfilePage currentUser={currentUser} />}
         />
         <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/create-product" element={<AddProduct />} />
         <Route path="/edit-profile" element={<EditProfile />} />
       </Route>
     </Routes>
