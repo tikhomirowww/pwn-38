@@ -25,6 +25,16 @@ const ProfilePage = ({ currentUser }) => {
     setLikesPosts(newLikedPosts);
   }
 
+  const [showComment, setShowComment] = useState(new Set());
+  function toggleComment(postId) {
+    const newComments = new Set(showComment);
+    if (newComments.has(postId)) {
+      newComments.delete(postId);
+    } else {
+      newComments.add(postId);
+    }
+  }
+
   return (
     <div className="profile-container">
       {currentUser && (
@@ -51,6 +61,8 @@ const ProfilePage = ({ currentUser }) => {
                   <Card
                     toggleLike={toggleLike}
                     likedPosts={likedPosts}
+                    showComment={showComment}
+                    toggleComment={toggleComment}
                     item={item}
                     key={item.id}
                   />
