@@ -33,6 +33,7 @@ const ProfilePage = ({ currentUser }) => {
     } else {
       newComments.add(postId);
     }
+    setShowComment(newComments);
   }
 
   return (
