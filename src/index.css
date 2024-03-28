@@ -46,3 +46,15 @@
   opacity: 1;
   visibility: visible;
 }
+.formStyles {
+  color: rgb(150, 150, 200);
+  background-color: rgb(241, 241, 252);
+  width: 300px;
+  margin: 10px;
+  border: 2px solid rgb(150, 150, 200);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

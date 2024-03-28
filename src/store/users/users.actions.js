@@ -54,3 +54,19 @@ export const handleLike = createAsyncThunk(
     dispatch(getOneUser(user.id));
   }
 );
+
+export const editProfile = createAsyncThunk(
+  "users/editProfile",
+  async ({ user, id }, { dispatch }) => {
+    console.log(user);
+    await axios.patch(`${USERS_API}/${id}`, {
+      profileImage: user.profileImage,
+      backgroundImage: user.backgroundImage,
+      username: user.username,
+      password: user.password,
+      email: user.email,
+      description: user.description,
+    });
+    dispatch(getCurrentUser(id));
+  }
+);

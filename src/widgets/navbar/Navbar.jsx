@@ -56,6 +56,11 @@ const Navbar = () => {
             </Button>
           </Link>
         )}
+        {currentUser && (
+          <Link to="/edit-profile">
+            <Button style={{ color: "white" }}>Edit profile</Button>
+          </Link>
+        )}
         {/* <Button /> */}
         <Link to="/profile">{user.username}</Link>
       </div>

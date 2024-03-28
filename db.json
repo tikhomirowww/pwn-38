@@ -3,10 +3,10 @@
     {
       "username": "Vasya",
       "password": "123456",
-      "profileImage": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800",
-      "email": "superVasya@gmail.com",
-      "backgroundImage": "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg",
-      "description": "hello hello hello ",
+      "profileImage": "https://cdn.icon-icons.com/icons2/1603/PNG/512/people-avatar-head-man-male-beard-hypster_108541.png",
+      "email": "admin@mail.com",
+      "backgroundImage": "https://t4.ftcdn.net/jpg/04/61/47/03/360_F_461470323_6TMQSkCCs9XQoTtyer8VCsFypxwRiDGU.jpg",
+      "description": "my desc",
       "posts": [
         {
           "title": "hello world",
@@ -23,6 +23,14 @@
           "author": "Vasya",
           "likes": 6,
           "id": 2
+        },
+        {
+          "title": "my post",
+          "image": "https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg?crop=0.88847xw:1xh;center,top&resize=1200:*",
+          "description": "my description",
+          "id": 1711606499184,
+          "likes": 0,
+          "comments": []
         }
       ],
       "id": 1

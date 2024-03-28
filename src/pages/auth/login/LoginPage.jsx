@@ -59,8 +59,8 @@ const LoginPage = () => {
   return (
     <div>
       <AuthForm>
-        <h2>Login form</h2>
-        <form onSubmit={handleSubmit}>
+        <form className="formStyles" onSubmit={handleSubmit}>
+          <h2>Login form</h2>
           <Input
             onChange={handleChange}
             name="username"
