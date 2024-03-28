@@ -26,12 +26,12 @@
   color: rgb(100, 100, 100);
 }
 
-.inputGroup  label {
+.inputGroup label {
   transform: translateY(-50%) scale(0.9);
   margin: 0em;
   margin-left: 1.3em;
   padding: 0.4em;
-  background-color: white;
+  background-color: rgb(241, 241, 252);
 }
 
 .inputGroup :is(input:focus, input:valid) {

@@ -4,6 +4,7 @@ import Button from "../../widgets/buttons/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost } from "../../store/users/users.actions";
 import { useNavigate } from "react-router-dom";
+import AuthForm from "../auth/AuthForm";
 
 const CreatePost = () => {
   const { currentUser } = useSelector((state) => state.users);
@@ -44,17 +45,19 @@ const CreatePost = () => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
-      <h2>Create post</h2>
-      <Input onChange={handleChange} value={post.title} name={"title"} />
-      <Input
-        onChange={handleChange}
-        value={post.description}
-        name={"description"}
-      />
-      <Input onChange={handleChange} value={post.image} name={"image"} />
-      <Button>Add post</Button>
-    </form>
+    <AuthForm>
+      <form className="formStyles" onSubmit={onSubmit}>
+        <h2>Create post</h2>
+        <Input onChange={handleChange} value={post.title} name={"title"} />
+        <Input
+          onChange={handleChange}
+          value={post.description}
+          name={"description"}
+        />
+        <Input onChange={handleChange} value={post.image} name={"image"} />
+        <Button>Add post</Button>
+      </form>
+    </AuthForm>
   );
 };
 

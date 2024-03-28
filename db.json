@@ -3,10 +3,10 @@
     {
       "username": "Vasya",
       "password": "123456",
-      "profileImage": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800",
-      "email": "superVasya@gmail.com",
-      "backgroundImage": "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg",
-      "description": "hello hello hello ",
+      "profileImage": "https://cdn.icon-icons.com/icons2/1603/PNG/512/people-avatar-head-man-male-beard-hypster_108541.png",
+      "email": "admin@mail.com",
+      "backgroundImage": "https://t4.ftcdn.net/jpg/04/61/47/03/360_F_461470323_6TMQSkCCs9XQoTtyer8VCsFypxwRiDGU.jpg",
+      "description": "my desc",
       "posts": [
         {
           "title": "hello world",
@@ -23,6 +23,14 @@
           "author": "Vasya",
           "likes": 5,
           "id": 2
+        },
+        {
+          "title": "my post",
+          "image": "https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg?crop=0.88847xw:1xh;center,top&resize=1200:*",
+          "description": "my description",
+          "id": 1711606499184,
+          "likes": 0,
+          "comments": []
         }
       ],
       "id": 1
@@ -40,7 +48,7 @@
           "image": "https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk=",
           "description": "super desc",
           "id": "",
-          "likes": 0,
+          "likes": 1,
           "comments": []
         },
         {
@@ -48,7 +56,7 @@
           "image": "https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg",
           "description": "say hello",
           "id": 1711524145043,
-          "likes": -1,
+          "likes": 0,
           "comments": []
         }
       ],
@@ -67,7 +75,7 @@
           "image": "https://t4.ftcdn.net/jpg/02/57/75/51/360_F_257755130_JgTlcqTFxabsIKgIYLAhOFEFYmNgwyJ6.jpg",
           "description": "hello hello hello ",
           "author": "Vasya",
-          "likes": 0,
+          "likes": 1,
           "id": 1
         }
       ],
