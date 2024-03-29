@@ -38,7 +38,6 @@ const Navbar = () => {
       });
     }
   }, [currentUser]);
-  console.log(currentUser);
   return (
     <div className={styles.navbar}>
       <Link className={styles.logo} to="/">

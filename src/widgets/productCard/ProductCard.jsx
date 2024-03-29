@@ -1,30 +1,65 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./productCard.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../store/products/products.actions";
+import {
+  deleteProduct,
+  getProducts,
+} from "../../store/products/products.actions";
 import Button from "../../widgets/buttons/Button";
+import { Link, useSearchParams } from "react-router-dom";
+import Loader from "../loader/Loader";
+import Input from "../inputs/Input";
 
-const HomePage = () => {
-  const { products } = useSelector((state) => state.products);
+const ProductsCard = () => {
+  const { products, loading, error } = useSelector((state) => state.products);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchVal, setSearchVal] = useState(searchParams.get("q") || "");
+
+  useEffect(() => {
+    const currentParams = Object.fromEntries([...searchParams]);
+    console.log(currentParams);
+    setSearchParams({ ...currentParams, q: searchVal });
+  }, [searchVal]);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProducts());
-  }, []);
-  console.log(products);
+  }, [dispatch]);
   return (
-    <div className={styles.cardList}>
-      {products.map((item) => (
-        <div className={styles.card}>
-          <img src={item.image} alt="" />
-          <h2>{item.title}</h2>
-          <h3>{item.price}$</h3>
-          <p>{item.description}</p>
-          <Button color="blue">edit</Button>
-          <Button color="red">delete</Button>
-        </div>
-      ))}
+    <div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          dispatch(getProducts(searchVal));
+        }}
+      >
+        <Input
+          value={searchVal}
+          onChange={(e) => setSearchVal(e.target.value)}
+          name="Search"
+        />
+      </form>
+      <div className={styles.cardList}>
+        {(loading || error) && <Loader />}
+        {products.map((item) => (
+          <div key={item.id} className={styles.card}>
+            <img src={item.image} alt="" />
+            <h2>{item.title}</h2>
+            <h3>{item.price}$</h3>
+            <p>{item.description}</p>
+            <Link to={`/edit-product/${item.id}`}>
+              <Button color="blue">edit</Button>
+            </Link>
+            <Button
+              onClick={() => dispatch(deleteProduct(item.id))}
+              color="red"
+            >
+              delete
+            </Button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default HomePage;
+export default ProductsCard;

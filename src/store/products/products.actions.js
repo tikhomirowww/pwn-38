@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { getUsers } from "../users/users.actions";
 
 const PRODUCTS_API = "http://localhost:8006/products";
 
@@ -12,8 +13,33 @@ export const createProduct = createAsyncThunk(
 
 export const getProducts = createAsyncThunk(
   "products/getProducts",
-  async () => {
-    const { data } = await axios.get(PRODUCTS_API);
+  async (search = "") => {
+    console.log(search);
+    const { data } = await axios.get(`${PRODUCTS_API}?q=${search}`);
     return data;
+  }
+);
+
+export const deleteProduct = createAsyncThunk(
+  "products/deleteProduct",
+  async (id, { dispatch }) => {
+    await axios.delete(`${PRODUCTS_API}/${id}`);
+    dispatch(getProducts());
+  }
+);
+
+export const getOneProduct = createAsyncThunk(
+  "products/getOneProduct",
+  async (id) => {
+    const { data } = await axios.get(`${PRODUCTS_API}/${id}`);
+    return data;
+  }
+);
+
+export const editProduct = createAsyncThunk(
+  "products/editProduct",
+  async ({ id, product }, { dispatch }) => {
+    await axios.patch(`${PRODUCTS_API}/${id}`, product);
+    dispatch(getProducts());
   }
 );
