@@ -6,11 +6,24 @@ const INIT_STATE = {
   oneProduct: null,
   loading: false,
   error: false,
+  currentPage: 1,
+  lastPage: false,
 };
 
 const productsSlice = createSlice({
   name: "products",
   initialState: INIT_STATE,
+  reducers: {
+    prevPage: (state) => {
+      state.currentPage--;
+    },
+    nextPage: (state) => {
+      state.currentPage++;
+    },
+    setLastPage: (state, { payload }) => {
+      state.lastPage = payload;
+    },
+  },
   extraReducers: (builder) =>
     builder
       .addCase(getProducts.pending, (state) => {
@@ -37,4 +50,5 @@ const productsSlice = createSlice({
       }),
 });
 
+export const { nextPage, prevPage, setLastPage } = productsSlice.actions;
 export default productsSlice.reducer;

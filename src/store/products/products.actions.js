@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { getUsers } from "../users/users.actions";
+import { setLastPage } from "./products.slice";
 
 const PRODUCTS_API = "http://localhost:8006/products";
 
@@ -13,9 +14,16 @@ export const createProduct = createAsyncThunk(
 
 export const getProducts = createAsyncThunk(
   "products/getProducts",
-  async (search = "") => {
-    console.log(search);
-    const { data } = await axios.get(`${PRODUCTS_API}?q=${search}`);
+  async (search = "", { getState, dispatch }) => {
+    const { currentPage } = getState().products;
+    const { data, headers } = await axios.get(
+      `${PRODUCTS_API}?_page=${currentPage}&_limit=3&q=${search}`
+    );
+    const totalCount = Math.ceil(headers["x-total-count"] / 3);
+    console.log(totalCount);
+    currentPage === totalCount
+      ? dispatch(setLastPage(true))
+      : dispatch(setLastPage(false));
     return data;
   }
 );
