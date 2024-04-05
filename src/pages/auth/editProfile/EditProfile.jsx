@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import AuthForm from "../../../features/auth/AuthForm";
-import Input from "../../../widgets/inputs/Input";
-import Button from "../../../widgets/buttons/Button";
+import InputNew from "../../../widgets/inputs/InputNew";
+import ButtonNew from "../../../widgets/buttons/ButtonNew";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   editProfile,
   getCurrentUser,
 } from "../../../store/users/users.actions";
+import BannerLeft from "../../../widgets/bannerLeft/BannerLeft";
+import BannerRight from "../../../widgets/bannerRight/BannerRight";
 
 const EditProfile = () => {
   const [user, setUser] = useState({
-    profileImage: "",
-    backgroundImage: "",
     username: "",
     password: "",
     email: "",
-    description: "",
+    profileImage: "",
   });
 
   const dispatch = useDispatch();
@@ -29,12 +29,10 @@ const EditProfile = () => {
 
     if (currentUser) {
       setUser({
-        profileImage: currentUser.profileImage,
-        backgroundImage: currentUser.backgroundImage,
         username: currentUser.username,
         password: currentUser.password,
         email: currentUser.email,
-        description: currentUser.description,
+        profileImage: currentUser.profileImage,
       });
     }
   }, [dispatch, currentUser]);
@@ -49,73 +47,79 @@ const EditProfile = () => {
 
     for (let key in user) {
       if (!user[key]) {
-        alert("Some inputs are empty!");
+        alert("Не все поля заполнены...");
         return;
       }
     }
 
     if (user.password.length < 6) {
-      alert("Password must be more than 6 symbols");
+      alert("Пароль должен быть длинее 6 символов...");
       return;
     }
 
     dispatch(editProfile({ user, id: currentUser.id }, dispatch));
     setUser({
-      profileImage: "",
-      backgroundImage: "",
       username: "",
       password: "",
       email: "",
-      description: "",
+      profileImage: "",
     });
-    navigate("/profile");
+    navigate("/");
   }
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <BannerLeft />
       <AuthForm>
         <form className="formStyles" onSubmit={handleSubmit}>
-          <h2>Edit profile</h2>
-          <Input
+          <h2>Изменить профиль</h2>
+          <InputNew
             onChange={handleChange}
             name="username"
             value={user.username}
             type="text"
           />
-          <Input
+          <InputNew
             onChange={handleChange}
             name="password"
             value={user.password}
             type="text"
           />
 
-          <Input
+          <InputNew
             onChange={handleChange}
             name="email"
             value={user.email}
             type="email"
           />
-          <Input
+          {/* <Input
             onChange={handleChange}
             name="description"
             value={user.description}
             type="text"
-          />
+          /> */}
 
-          <Input
+          <InputNew
             onChange={handleChange}
             name="profileImage"
             value={user.profileImage}
             type="url"
           />
-          <Input
+          {/* <Input
             onChange={handleChange}
             name="backgroundImage"
             value={user.backgroundImage}
             type="url"
-          />
-          <Button>Edit</Button>
+          /> */}
+          <ButtonNew color="blue">Сохранить</ButtonNew>
         </form>
       </AuthForm>
+      <BannerRight />
     </div>
   );
 };

@@ -3,56 +3,51 @@
   padding: 0;
   box-sizing: border-box;
 }
-.navbar {
-  background-color: black;
+body {
+  background-color: #212123;
 }
+.style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navImage img {
-  position: absolute;
-  top: 15px;
-  right: 20px;
   height: 70px;
   width: 70px;
+  margin: 0 10px;
   border-radius: 50%;
   cursor: pointer;
 }
 .navMenu {
-  display: flex;
+  max-width: 300px;
+  display: none;
   flex-direction: column;
   position: absolute;
-  top: 70px;
-  right: 70px;
-  background-color: #fff;
-  z-index: 2;
-}
-.navMenu {
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  transform: translateY(-10px);
-  visibility: hidden;
-  transition: 0.5s;
-  border: 1px solid gray;
+  top: 100px;
+  left: 10px;
+  background-color: #191919;
   padding: 20px;
   border-radius: 10px;
-  color: black;
+  color: #767171;
+  /* opacity: 0; */
 }
 
-.navMenu a {
-  color: black !important;
-}
 .navMenu.active {
   display: flex;
   transform: translate(0);
   opacity: 1;
   visibility: visible;
+  z-index: 2;
 }
 .formStyles {
-  color: rgb(150, 150, 200);
-  background-color: rgb(241, 241, 252);
-  width: 300px;
-  margin: 10px;
-  border: 2px solid rgb(150, 150, 200);
-  border-radius: 20px;
+  color: #7c7878;
+  background-color: #191919;
+  width: 690px;
+  height: 400px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;

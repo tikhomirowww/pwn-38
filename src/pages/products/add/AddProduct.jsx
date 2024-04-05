@@ -5,6 +5,10 @@ import Button from "../../../widgets/buttons/Button";
 import { useDispatch } from "react-redux";
 import { createProduct } from "../../../store/products/products.actions";
 import { useNavigate } from "react-router-dom";
+import InputNew from "../../../widgets/inputs/InputNew";
+import ButtonNew from "../../../widgets/buttons/ButtonNew";
+import BannerLeft from "../../../widgets/bannerLeft/BannerLeft";
+import BannerRight from "../../../widgets/bannerRight/BannerRight";
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
@@ -42,20 +46,46 @@ const AddProduct = () => {
   }
 
   return (
-    <AuthForm>
-      <form className="formStyles" onSubmit={handleSubmit}>
-        <h2>Create product</h2>
-        <Input onChange={handleChange} name="title" value={product.title} />
-        <Input
-          onChange={handleChange}
-          name="description"
-          value={product.description}
-        />
-        <Input onChange={handleChange} name="price" value={product.price} />
-        <Input onChange={handleChange} name="image" value={product.image} />
-        <Button>Add product</Button>
-      </form>
-    </AuthForm>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <BannerLeft />
+      <AuthForm>
+        <form className="formStyles" onSubmit={handleSubmit}>
+          <h2>Добавить карточку</h2>
+          <InputNew
+            placeholder="Наименование..."
+            onChange={handleChange}
+            name="title"
+            value={product.title}
+          />
+          <InputNew
+            placeholder="Описание..."
+            onChange={handleChange}
+            name="description"
+            value={product.description}
+          />
+          <InputNew
+            placeholder="Цена..."
+            onChange={handleChange}
+            name="price"
+            value={product.price}
+          />
+          <InputNew
+            placeholder="Изображение..."
+            onChange={handleChange}
+            name="image"
+            value={product.image}
+          />
+          <ButtonNew color="blue">Добавить</ButtonNew>
+        </form>
+      </AuthForm>
+      <BannerRight />
+    </div>
   );
 };
 

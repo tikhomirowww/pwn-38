@@ -17,9 +17,9 @@ export const getProducts = createAsyncThunk(
   async (search = "", { getState, dispatch }) => {
     const { currentPage } = getState().products;
     const { data, headers } = await axios.get(
-      `${PRODUCTS_API}?_page=${currentPage}&_limit=3&q=${search}`
+      `${PRODUCTS_API}?_page=${currentPage}&_limit=8&q=${search}`
     );
-    const totalCount = Math.ceil(headers["x-total-count"] / 3);
+    const totalCount = Math.ceil(headers["x-total-count"] / 8);
     console.log(totalCount);
     currentPage === totalCount
       ? dispatch(setLastPage(true))

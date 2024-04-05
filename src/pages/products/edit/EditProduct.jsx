@@ -9,6 +9,10 @@ import {
   getOneProduct,
 } from "../../../store/products/products.actions";
 import { useNavigate, useParams } from "react-router-dom";
+import InputNew from "../../../widgets/inputs/InputNew";
+import ButtonNew from "../../../widgets/buttons/ButtonNew";
+import BannerLeft from "../../../widgets/bannerLeft/BannerLeft";
+import BannerRight from "../../../widgets/bannerRight/BannerRight";
 
 const EditProduct = () => {
   const [product, setProduct] = useState({
@@ -58,20 +62,42 @@ const EditProduct = () => {
   }
 
   return (
-    <AuthForm>
-      <form className="formStyles" onSubmit={handleSubmit}>
-        <h2>Edit product</h2>
-        <Input onChange={handleChange} name="title" value={product.title} />
-        <Input
-          onChange={handleChange}
-          name="description"
-          value={product.description}
-        />
-        <Input onChange={handleChange} name="price" value={product.price} />
-        <Input onChange={handleChange} name="image" value={product.image} />
-        <Button>Save changes</Button>
-      </form>
-    </AuthForm>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <BannerLeft />
+      <AuthForm>
+        <form className="formStyles" onSubmit={handleSubmit}>
+          <h2>Изменить карточку</h2>
+          <InputNew
+            onChange={handleChange}
+            name="title"
+            value={product.title}
+          />
+          <InputNew
+            onChange={handleChange}
+            name="description"
+            value={product.description}
+          />
+          <InputNew
+            onChange={handleChange}
+            name="price"
+            value={product.price}
+          />
+          <InputNew
+            onChange={handleChange}
+            name="image"
+            value={product.image}
+          />
+          <ButtonNew color="blue">Сохранить</ButtonNew>
+        </form>
+      </AuthForm>
+      <BannerRight />
+    </div>
   );
 };
 

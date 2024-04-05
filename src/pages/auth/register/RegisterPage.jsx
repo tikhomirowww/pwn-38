@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styles from "../auth.module.css";
 import AuthForm from "../../../features/auth/AuthForm";
-import Input from "../../../widgets/inputs/Input";
-import Button from "../../../widgets/buttons/Button";
+import BannerLeft from "../../../widgets/bannerLeft/BannerLeft";
+import BannerRight from "../../../widgets/bannerRight/BannerRight";
 import { getUsers, registerUser } from "../../../store/users/users.actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import InputNew from "../../../widgets/inputs/InputNew";
+import ButtonNew from "../../../widgets/buttons/ButtonNew";
 
 const RegisterPage = () => {
   const [password, setPassword] = useState("");
@@ -15,9 +17,6 @@ const RegisterPage = () => {
     passwordConfirm: "",
     email: "",
     profileImage: "",
-    backgroundImage:
-      "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-    posts: [],
   });
 
   function handleChange(e) {
@@ -38,17 +37,17 @@ const RegisterPage = () => {
     e.preventDefault();
     for (let key in user) {
       if (!user[key]) {
-        alert("Some inputs are empty!");
+        alert("Заполните все поля...");
         return;
       }
     }
     if (user.password !== user.passwordConfirm) {
-      alert("Passwords do not match");
+      alert("Пароли не совпадают...");
       return;
     }
 
     if (user.password.length < 6) {
-      alert("Password must be more than 6 symbols");
+      alert("Пароль должен быть не менее 6 символов...");
       return;
     }
 
@@ -58,7 +57,7 @@ const RegisterPage = () => {
     );
 
     if (userObj) {
-      alert("You have already registered");
+      alert("Вы уже зарегистрированы...");
       return;
     }
 
@@ -69,51 +68,61 @@ const RegisterPage = () => {
       passwordConfirm: "",
       email: "",
       profileImage: "",
-      backgroundImage:
-        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-      posts: [],
     });
     navigate("/");
   }
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <BannerLeft />
       <AuthForm>
         <form className="formStyles" onSubmit={handleSubmit}>
-          <h2>Register form</h2>
-          <Input
+          <h2>Регистрация</h2>
+          <InputNew
+            placeholder="Имя..."
             onChange={handleChange}
             name="username"
             value={user.username}
             type="text"
           />
-          <Input
+          <InputNew
+            placeholder="Пароль..."
             onChange={handleChange}
             name="password"
             value={user.password}
             type="password"
           />
-          <Input
+          <InputNew
+            placeholder="Подтверждение..."
             onChange={handleChange}
             name="passwordConfirm"
             value={user.passwordConfirm}
             type="password"
           />
-          <Input
+          <InputNew
+            placeholder="Почта..."
             onChange={handleChange}
             name="email"
             value={user.email}
             type="email"
           />
-          <Input
+          <InputNew
+            placeholder="Фото..."
             onChange={handleChange}
             name="profileImage"
             value={user.profileImage}
             type="url"
           />
-          <Button>Sign up</Button>
+          <ButtonNew color="blue">Отправить</ButtonNew>
         </form>
       </AuthForm>
+      <BannerRight />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-.userContent {
+/* .userContent {
   padding: 20px;
   display: grid;
   column-gap: 20px;
@@ -20,9 +20,7 @@
 .usersCard:hover {
   transform: scale(1.1);
 }
-/* .usersCard p {
-  text-decoration: none;
-} */
+
 
 .img {
   object-fit: cover;
@@ -33,4 +31,4 @@
 .link {
   width: 200px;
   text-decoration: none;
-}
+} */

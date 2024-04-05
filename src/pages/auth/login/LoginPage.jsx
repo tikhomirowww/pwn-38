@@ -6,6 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser, getUsers } from "../../../store/users/users.actions";
 import Input from "../../../widgets/inputs/Input";
 import Button from "../../../widgets/buttons/Button";
+import InputNew from "../../../widgets/inputs/InputNew";
+import ButtonNew from "../../../widgets/buttons/ButtonNew";
+import BannerLeft from "../../../widgets/bannerLeft/BannerLeft";
+import BannerRight from "../../../widgets/bannerRight/BannerRight";
 
 const LoginPage = () => {
   const [user, setUser] = useState({
@@ -16,7 +20,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const { users } = useSelector((state) => state.users);
-  //   console.log(users);
+
   useEffect(() => {
     dispatch(getUsers());
   }, [dispatch]);
@@ -30,20 +34,20 @@ const LoginPage = () => {
     e.preventDefault();
     for (let key in user) {
       if (!user[key]) {
-        alert("Some inputs are empty!");
+        alert("Не все поля заполнены...");
         return;
       }
     }
 
     const userObj = await users.find((item) => item.username === user.username);
-    // console.log(userObj);
+
     if (!userObj) {
-      alert("User not found!");
+      alert("Пользователь не наиден...");
       return;
     }
 
     if (user.password !== userObj.password) {
-      alert("Wrong password");
+      alert("Не верный пароль...");
       return;
     }
 
@@ -54,28 +58,37 @@ const LoginPage = () => {
     localStorage.setItem("currentUser", userObj.id);
     navigate("/");
     dispatch(getCurrentUser(userObj.id));
-    // console.log(user);
   }
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <BannerLeft />
       <AuthForm>
         <form className="formStyles" onSubmit={handleSubmit}>
-          <h2>Login form</h2>
-          <Input
+          <h2>Вход</h2>
+          <InputNew
+            placeholder="Имя..."
             onChange={handleChange}
             name="username"
             value={user.username}
             type="text"
           />
-          <Input
+          <InputNew
+            placeholder="Пароль..."
             onChange={handleChange}
             name="password"
             value={user.password}
             type="password"
           />
-          <Button>Sign in</Button>
+          <ButtonNew color="blue">Отправить</ButtonNew>
         </form>
       </AuthForm>
+      <BannerRight />
     </div>
   );
 };
